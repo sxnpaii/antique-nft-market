@@ -1,18 +1,18 @@
 ---
 // styles
 import  "../../styles/components-style/Header.scss";
-// links
-import {links} from "../../utils/utils";
+// navlinks
+import {navlinks, authorization, mainRoutes} from "../../utils/routes";
 // login status
 const loggedIn = false
 ---
 
 <header class="Header">
-    <a href="/" class="HomeLink">Antique NFT</a>
+    <a href={mainRoutes.home} class="HomeLink">Antique NFT</a>
     <div class="Visible">
         <ul class="Ul menu">
             {
-                links.map((link) => (
+                navlinks.map((link) => (
                     <li>
                         <a href={link.path}>{link.name}</a>
                     </li>
@@ -22,10 +22,10 @@ const loggedIn = false
         <ul class="Auth">
             {loggedIn 
             ?
-            <li><a href="/profile">My profile</a></li>
+            <li><a href={mainRoutes.profile}>My profile</a></li>
             :
-            <li><a href="/auth/login">Log in</a></li>
-            <li><a href="/auth/signup">Sign up</a></li>
+            <li><a href={authorization.login}>Log in</a></li>
+            <li><a href={authorization.signup}>Sign up</a></li>
         }
         </ul>
         <img src="./icons/menu.svg" alt="" />

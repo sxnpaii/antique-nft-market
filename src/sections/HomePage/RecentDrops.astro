@@ -1,0 +1,29 @@
+---
+import "../../styles/sections-style/HomePage/RecentDrops.scss";
+import { marketplace } from "../../utils/routes";
+import { recentDrops, slug } from "../../utils/utils";
+---
+
+<section class="RecentDrops">
+    <h2>Recent drops</h2>
+    <swiper-container class="mySwiper RecentDrops">
+        {
+            recentDrops.map((img) => (
+                <swiper-slide>
+                    <a href={marketplace.nfts + slug(img.alt)}>
+                        <img src={img.path} alt={img.alt} />
+                    </a>
+                    <p>{img.alt}</p>
+                    <b>0.98 Eth</b>
+                </swiper-slide>
+            ))
+        }
+    </swiper-container>
+</section>
+<script>
+    // render on client side
+    import { swiperBreakpoints } from "../../utils/utils";
+
+    let swiperEl = document.querySelector(".mySwiper.RecentDrops");
+    swiperBreakpoints(swiperEl);
+</script>

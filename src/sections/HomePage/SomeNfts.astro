@@ -1,0 +1,36 @@
+---
+// styles
+import "../../styles/sections-style/HomePage/SomeNfts.scss";
+// routes
+import { marketplace } from "../../utils/routes";
+// collections
+import { collections, slug } from "../../utils/utils";
+---
+
+<section class="SomeNfts">
+    <h2>Some NFTs collections</h2>
+    <swiper-container
+        class="mySwiper SomeNfts"
+        autoplay-delay="2500"
+        slides-per-view="4"
+    >
+        {
+            collections.map((colects) => (
+                <swiper-slide>
+                    <img src={colects.imgs[0]} alt={colects.title} />
+                    <h6>{colects.title}</h6>
+                    <a href={marketplace.collections + slug(colects.title)}>
+                        View Collection
+                    </a>
+                </swiper-slide>
+            ))
+        }
+    </swiper-container>
+</section>
+<script>
+    // render on client side
+    import { swiperBreakpoints } from "../../utils/utils";
+
+    let swiperEl = document.querySelector(".mySwiper.SomeNfts");
+    swiperBreakpoints(swiperEl);
+</script>

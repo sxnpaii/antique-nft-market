@@ -14,7 +14,7 @@
     }
 
     .Visible {
-        @apply flex items-center flex-wrap-reverse justify-between gap-x-12 w-[65%] mr-5;
+        @apply flex items-center flex-wrap-reverse justify-between gap-x-10 w-[53%] sm:w-[65%] mr-5;
 
         @media (max-width: 908px) {
             @apply justify-end max-w-[230px];

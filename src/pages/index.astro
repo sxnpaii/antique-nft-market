@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 // sections
 import HeroSlider from "../sections/HomePage/HeroSlider.astro";
 import Count from "../sections/HomePage/Count.astro";
+import SomeNfts from "../sections/HomePage/SomeNfts.astro";
+import RecentDrops from "../sections/HomePage/RecentDrops.astro";
 // styles
 import "../styles/globals.scss";
 ---
@@ -15,5 +17,12 @@ import "../styles/globals.scss";
     <HeroSlider />
     <!-- Count -->
     <Count />
-
+    <!-- SomeNfts -->
+    <SomeNfts />
+    <!-- RecentDrops -->
+    <RecentDrops/>
+    <!-- init swiperjs -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"
+    ></script>
 </Layout>

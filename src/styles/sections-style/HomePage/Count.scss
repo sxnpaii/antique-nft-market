@@ -22,7 +22,7 @@
     @apply mt-32 text-center;
 
     h2 {
-        @apply heading-text uppercase text-5xl max-w-[880px] m-auto
+        @apply heading-text uppercase text-3xl  md:text-5xl max-w-[880px] m-auto
     }
 
     p {
@@ -33,7 +33,7 @@
         @apply flexbox justify-between mx-auto mt-10 max-w-[495px];
 
         h6 {
-            @apply basic-text text-6xl font-light;
+            @apply basic-text text-5xl font-light;
             line-height: normal;
             letter-spacing: 1.04px;
 
