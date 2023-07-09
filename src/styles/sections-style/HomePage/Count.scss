@@ -1,0 +1,94 @@
+@use "../../globals.scss";
+
+@property --num1 {
+    syntax: "<integer>";
+    initial-value: 5;
+    inherits: false;
+}
+
+@property --num2 {
+    syntax: "<integer>";
+    initial-value: 9;
+    inherits: false;
+}
+
+@property --num3 {
+    syntax: "<integer>";
+    initial-value: 1;
+    inherits: false;
+}
+
+.Count {
+    @apply mt-32 text-center;
+
+    h2 {
+        @apply heading-text uppercase text-5xl max-w-[880px] m-auto
+    }
+
+    p {
+        @apply basic-text font-light max-w-[680px] m-auto;
+    }
+
+    .nums {
+        @apply flexbox justify-between mx-auto mt-10 max-w-[495px];
+
+        h6 {
+            @apply basic-text text-6xl font-light;
+            line-height: normal;
+            letter-spacing: 1.04px;
+
+
+
+            span.nfts {
+                animation: counter1 2s ease-in-out;
+                counter-reset: num var(--num1);
+            }
+
+            span.prod {
+                animation: counter2 2s ease-in-out;
+                counter-reset: num var(--num2);
+            }
+            span.arts{
+                animation: counter3 2s ease-in-out;
+                counter-reset: num var(--num3);
+            }
+
+
+            span::after {
+                content: counter(num);
+            }
+
+        }
+    }
+}
+
+// animations
+@keyframes counter1 {
+    from {
+        --num1: 50;
+    }
+
+    to {
+        --num1: 5;
+    }
+}
+
+@keyframes counter2 {
+    from {
+        --num2: 50;
+    }
+
+    to {
+        --num2: 9;
+    }
+}
+
+@keyframes counter3 {
+    from {
+        --num3: 50;
+    }
+
+    to {
+        --num3: 1;
+    }
+}

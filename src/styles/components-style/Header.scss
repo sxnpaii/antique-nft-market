@@ -1,0 +1,69 @@
+@use "../globals.scss";
+
+
+.Header {
+    @apply flexbox justify-between xl:px-[145px] py-5 fixed left-0 w-full border backdrop-blur-xl bg-[#ffffff80] mb-[70px] z-50;
+    align-items: start;
+    height: 70px;
+    overflow: hidden;
+    transition: 330ms;
+
+
+    .HomeLink {
+        @apply basic-text font-normal text-2xl ml-5;
+    }
+
+    .Visible {
+        @apply flex items-center flex-wrap-reverse justify-between gap-x-12 w-[65%] mr-5;
+
+        @media (max-width: 908px) {
+            @apply justify-end max-w-[230px];
+        }
+    }
+
+
+    .Ul {
+        @apply flex gap-x-12 gap-y-5;
+
+        @media (max-width: 908px) {
+
+            margin-top: 50px;
+            transition: all 300ms !important;
+            flex-direction: column;
+            text-align: right;
+
+            li {
+                border-bottom: 1px solid black;
+            }
+        }
+
+        a {
+            @apply basic-text font-light hover:underline;
+        }
+    }
+
+    img {
+        @apply hidden cursor-pointer;
+        width: 25px;
+        height: 25px;
+
+        @media (max-width:908px) {
+            display: block;
+        }
+    }
+
+    .Auth {
+        @apply flexbox sm:gap-x-12 gap-x-5 gap-y-5;
+
+
+        a {
+            @apply basic-text font-light hover:underline;
+        }
+    }
+}
+
+.active {
+    height: auto !important;
+    overflow: visible;
+    transition: 330ms;
+}

@@ -1,0 +1,20 @@
+@use "../../globals.scss";
+
+.Hero {
+    @apply mt-[150px];
+
+    h1 {
+        @apply heading-text uppercase text-center text-4xl sm:text-5xl md:text-7xl mb-[45px];
+    }
+    .mySwiper{
+        .swiper-slide{
+            @apply text-center uppercase basic-text;
+            img{
+                @apply w-full
+            }
+            p{
+                @apply mt-5
+            }
+        }
+    }
+}

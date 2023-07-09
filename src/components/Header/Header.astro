@@ -1,0 +1,34 @@
+---
+// styles
+import  "../../styles/components-style/Header.scss";
+// links
+import {links} from "../../utils/utils";
+// login status
+const loggedIn = false
+---
+
+<header class="Header">
+    <a href="/" class="HomeLink">Antique NFT</a>
+    <div class="Visible">
+        <ul class="Ul menu">
+            {
+                links.map((link) => (
+                    <li>
+                        <a href={link.path}>{link.name}</a>
+                    </li>
+                ))
+            }
+        </ul>
+        <ul class="Auth">
+            {loggedIn 
+            ?
+            <li><a href="/profile">My profile</a></li>
+            :
+            <li><a href="/auth/login">Log in</a></li>
+            <li><a href="/auth/signup">Sign up</a></li>
+        }
+        </ul>
+        <img src="./icons/menu.svg" alt="" />
+    </div>
+</header>
+<script src="./nav.ts"></script>

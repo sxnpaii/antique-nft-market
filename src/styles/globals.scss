@@ -1,0 +1,39 @@
+//? import fonts
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// * variables 
+// fonts
+$Cormorant: 'Cormorant', serif;
+$Jost: 'Jost', sans-serif;
+// colors
+$Black: #171717;
+$BgWhite: #EFEEEB;
+$White: #FDFDFC;
+
+
+.heading-text {
+    font-family: $Cormorant;
+    font-weight: 400;
+}
+
+.basic-text {
+    font-family: $Jost;
+    // font-weight: 300;
+}
+
+.flexbox {
+    @apply flex items-center flex-wrap;
+}
+
+    body {
+        background: $White;
+        animation: opacity 700ms ease-in-out;
+    }
+    @keyframes opacity {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }

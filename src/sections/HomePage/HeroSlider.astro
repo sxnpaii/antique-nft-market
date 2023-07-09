@@ -1,0 +1,64 @@
+---
+import "../../styles/sections-style/HomePage/HeroSlider.scss";
+import { sliderImages } from "../../utils/utils";
+
+const slug = (leter) => {
+   return leter
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\w-]+/g, "");
+};
+---
+
+<section class="Hero">
+    <h1>Antique NFT market</h1>
+    <swiper-container
+        class="mySwiper"
+        naigation="true"
+        autoplay-delay="2500"
+        centered-slides="true"
+    >
+        {
+            sliderImages.map((img) => (
+                <swiper-slide class="swiper-slide">
+                    <a href={`/marketplace/nfts/${slug(img.alt)}`}>
+                        <img
+                            src={img.path}
+                            alt={img.alt}
+                            width={img.width}
+                            height={img.height}
+                        />
+                    </a>
+                    <p>{img.alt}</p>
+                    <b>0.98 Eth</b>
+                </swiper-slide>
+            ))
+        }
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </swiper-container>
+</section>
+<script
+    src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"
+></script>
+
+<script>
+    let swiperEl = document.querySelector(".mySwiper");
+
+    Object.assign(swiperEl, {
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            450: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+    });
+</script>
