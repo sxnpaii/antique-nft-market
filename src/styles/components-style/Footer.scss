@@ -1,0 +1,27 @@
+@use "../globals.scss";
+
+footer {
+    @apply w-full flexbox justify-between mt-32 mb-[100px] px-20;
+    .info{
+        @apply max-w-[400px];
+        h2{
+            @apply basic-text text-2xl mb-3
+        }
+        p{
+            @apply basic-text opacity-70
+        }
+    }
+    .menu{
+        @apply flex items-start gap-20;
+        ul{
+            h6{
+                @apply heading-text text-xl font-bold uppercase mb-5
+            }
+            li{
+                a{
+                    @apply basic-text font-light uppercase hover:underline
+                }
+            }
+        }
+    }
+}

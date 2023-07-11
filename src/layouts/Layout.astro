@@ -2,7 +2,8 @@
 // astro imports
 const { title = "", description = "" } = Astro.props as Props;
 // components
-import Header from "../components/Header/Header.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 // styles
 import "../styles/components-style/Layout.scss";
 
@@ -24,6 +25,7 @@ interface Props {
         <main class="Body">
             <Header />
             <slot />
+            <Footer/>
         </main>
     </body>
 </html>

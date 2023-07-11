@@ -11,7 +11,7 @@
             @apply p-5 text-center;
             background-color: globals.$BgWhite;
             img {
-                @apply max-w-full mx-auto mb-5;
+                @apply w-full mx-auto mb-5;
             } 
             h6 {
                 @apply basic-text uppercase font-medium text-xl

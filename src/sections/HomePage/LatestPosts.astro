@@ -1,0 +1,50 @@
+---
+// styles
+import "../../styles/sections-style/HomePage/LatestPosts.scss";
+// posts
+import { posts } from "../../utils/posts";
+// utils
+import {slug} from "../../utils/utils";
+// routes
+import { mainRoutes } from "../../utils/routes";
+---
+
+<section class="LatestPosts">
+    <h2>Latest Informations</h2>
+    <swiper-container
+    class="mySwiper LatestPosts"
+    >
+        {
+            posts.map((post) => (
+                <swiper-slide>
+                    <img src={post.img} alt={post.title} />
+                    <h6>{post.title}</h6>
+                    <p>{post.description}</p>
+                    <a href={mainRoutes.blog + slug(post.title)}>Read More<a/>
+                </swiper-slide>
+            ))
+        }
+    </swiper-container>
+</section>
+
+<script>
+    let swiperEl = document.querySelector(".mySwiper.LatestPosts");
+
+Object.assign(swiperEl, {
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        570: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+});
+</script>
+

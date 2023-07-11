@@ -11,3 +11,12 @@
 - Configured _routes_ see `./utils/routes.ts`
 - And optimized functions like `slug()` and `swiperBreakpoints()`
 - Objects for DRY concept in `./utils/utils.ts`
+
+### Commit №3
+- Fixed image sizes on large screens
+- Completed **NewsLetter**, **LatestPosts** and **Footer** component
+- Ended layout of **HomePage**
+- Changes in `globals.scss`, `utils.ts`
+- Created `posts.ts` file in `utils/` folder.
+- Deleted `Header/` folder and moved `Header.astro` file to `components/`
+- Changed name: `COMMITS.md` to `README.md`

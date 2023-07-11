@@ -10,7 +10,7 @@ section.RecentDrops {
     .mySwiper.RecentDrops {
         swiper-slide {
             img{
-                @apply mb-5;
+                @apply mb-5 w-full;
             }
             p{
                 @apply basic-text font-normal text-xl uppercase

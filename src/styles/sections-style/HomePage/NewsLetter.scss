@@ -1,0 +1,35 @@
+@use "../../globals.scss";
+
+.NewsLetter {
+    @apply my-40 mx-auto text-center max-w-[680px];
+
+    h2 {
+        @apply heading-text md:text-5xl text-3xl uppercase mb-3
+    }
+
+    p {
+        @apply basic-text font-light mb-10
+    }
+
+    form {
+        @apply flexbox flex-wrap max-[680px]:flex-col justify-between max-w-[580px] p-3 mx-auto basic-text;
+        background-color: globals.$BgWhite;
+
+        input {
+            @apply inline-block sm:w-[60%] py-6 px-10 bg-transparent;
+
+            &:focus {
+                @apply outline-none
+            }
+            &::placeholder{
+                @apply italic
+            }
+
+        }
+        button {
+            @apply py-4 px-10 uppercase max-[680px]:w-full;
+            color: globals.$White;
+            background-color: globals.$Black;
+        }
+    }
+}

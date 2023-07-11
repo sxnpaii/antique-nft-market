@@ -1,0 +1,24 @@
+@use "../../globals.scss";
+
+section.LatestPosts {
+    h2{
+        @apply heading-text uppercase md:text-5xl text-3xl  text-center mb-10;
+    }
+    .mySwiper.LatestPosts{
+        swiper-slide{
+            img{
+                @apply mb-5 w-full;
+            }
+            h6{
+                @apply basic-text font-medium uppercase text-[18px];
+            }
+            p{
+                @apply basic-text font-light opacity-70 mb-4
+            }
+            a{
+                @apply basic-text uppercase underline
+            }
+        }
+
+    }
+}
