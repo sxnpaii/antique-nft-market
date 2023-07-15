@@ -1,0 +1,17 @@
+---
+// utils
+import { collections, slug } from "../../utils/utils";
+// routes
+import { marketplace } from "../../utils/routes";
+// styles
+import "../../styles/sections-style/MarketplacePage/Collections.scss";
+import Collection from "../../components/Collection.astro";
+---
+
+<section class="Collections">
+    <h3>Collections</h3>
+    <div class="Container">
+        {collections.map((image) => <Collection collections={image} />)}
+    </div>
+    <a href={marketplace.collections}><button>See more</button></a>
+</section>

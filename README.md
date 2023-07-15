@@ -20,3 +20,13 @@
 - Created `posts.ts` file in `utils/` folder.
 - Deleted `Header/` folder and moved `Header.astro` file to `components/`
 - Changed name: `COMMITS.md` to `README.md`
+
+### Commit №4
+- Completed **/marketplace/** page
+- Fixed styles in **Footer** component
+- Repeated sections and elements converted to reusable components
+- Fixed typos in `routing` links 
+- Added `routing` links for **/blog/** page
+- Fixes and deletions in **HomePage** sections
+- Typed props in all Components and created file `types.ts`
+- Removed unused other imports and `preact` in project (maybe i will add it later)

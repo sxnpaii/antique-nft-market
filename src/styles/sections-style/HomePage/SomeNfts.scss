@@ -7,21 +7,5 @@
     }
     .mySwiper {
         @apply my-10;
-        swiper-slide {
-            @apply p-5 text-center;
-            background-color: globals.$BgWhite;
-            img {
-                @apply w-full mx-auto mb-5;
-            } 
-            h6 {
-                @apply basic-text uppercase font-medium text-xl
-            }
-            a {
-                @apply basic-text uppercase font-light hover:underline
-            }
-        }
-        .swiper-pagination {
-            margin-top: 100px;
-        }
     }
 }

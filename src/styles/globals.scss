@@ -10,7 +10,7 @@ $Black: #171717;
 $BgWhite: #EFEEEB;
 $White: #FDFDFC;
 
-
+// basic classes
 .heading-text {
     font-family: $Cormorant;
     // font-weight: 400;
@@ -25,15 +25,19 @@ $White: #FDFDFC;
     @apply flex items-center flex-wrap;
 }
 
-    body {
-        background: $White;
-        animation: opacity 700ms ease-in-out;
+// fade for body 
+
+body {
+    background: $White;
+    animation: opacity 700ms ease-in-out;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
     }
-    @keyframes opacity {
-        from{
-            opacity: 0;
-        }
-        to{
-            opacity: 1;
-        }
+
+    to {
+        opacity: 1;
     }
+}

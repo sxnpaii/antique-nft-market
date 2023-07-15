@@ -1,9 +1,10 @@
 ---
+// components
+import Nft from "../../components/Nft.astro";
+// utils, images
+import { sliderImages } from "../../utils/utils";
 // styles
 import "../../styles/sections-style/HomePage/HeroSlider.scss";
-// utils, images
-import { sliderImages, slug } from "../../utils/utils";
-import { marketplace } from "../../utils/routes";
 ---
 
 <section class="Hero">
@@ -16,16 +17,7 @@ import { marketplace } from "../../utils/routes";
         {
             sliderImages.map((img) => (
                 <swiper-slide class="swiper-slide">
-                    <a href={marketplace.nfts + slug(img.alt)}>
-                        <img
-                            src={img.path}
-                            alt={img.alt}
-                            width={img.width}
-                            height={img.height}
-                        />
-                    </a>
-                    <p>{img.alt}</p>
-                    <b>0.98 Eth</b>
+                    <Nft nft={img} />
                 </swiper-slide>
             ))
         }

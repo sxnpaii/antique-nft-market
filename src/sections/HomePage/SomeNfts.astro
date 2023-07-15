@@ -1,10 +1,12 @@
 ---
-// styles
-import "../../styles/sections-style/HomePage/SomeNfts.scss";
+// components
+import Collection from "../../components/Collection.astro";
 // routes
 import { marketplace } from "../../utils/routes";
 // collections
 import { collections, slug } from "../../utils/utils";
+// styles
+import "../../styles/sections-style/HomePage/SomeNfts.scss";
 ---
 
 <section class="SomeNfts">
@@ -17,11 +19,7 @@ import { collections, slug } from "../../utils/utils";
         {
             collections.map((colects) => (
                 <swiper-slide>
-                    <img src={colects.imgs[0]} alt={colects.title} />
-                    <h6>{colects.title}</h6>
-                    <a href={marketplace.collections + slug(colects.title)}>
-                        View Collection
-                    </a>
+                    <Collection collections={colects}/>
                 </swiper-slide>
             ))
         }

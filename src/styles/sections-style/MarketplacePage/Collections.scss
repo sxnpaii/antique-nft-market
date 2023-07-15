@@ -1,0 +1,20 @@
+@use "../../globals.scss";
+
+.Collections {
+    @apply mt-32;
+
+    h3 {
+        @apply md:text-5xl text-3xl heading-text text-center uppercase mb-10;
+    }
+
+    .Container {
+        @apply xl:columns-4 md:columns-3 sm:columns-2 gap-5 mb-10;
+    }
+
+    a {
+        button{
+            @apply basic-text uppercase border hover:bg-transparent px-5 py-3 block mx-auto overflow-hidden;
+            background-color: globals.$BgWhite;
+        }
+    }
+}

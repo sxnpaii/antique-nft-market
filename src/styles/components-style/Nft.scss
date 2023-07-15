@@ -1,0 +1,17 @@
+@use "../globals.scss";
+
+.Nft {
+    @apply text-center uppercase basic-text break-inside-avoid mb-5;
+
+    img {
+        @apply mb-5 w-full;
+    }
+
+    p {
+        @apply basic-text font-normal text-xl uppercase;
+    }
+
+    b {
+        @apply basic-text uppercase;
+    }
+}

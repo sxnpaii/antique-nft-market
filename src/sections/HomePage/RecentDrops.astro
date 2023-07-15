@@ -1,7 +1,10 @@
 ---
+// components
+import Nft from "../../components/Nft.astro";
+// utils
+import { recentDrops } from "../../utils/utils";
+// styles
 import "../../styles/sections-style/HomePage/RecentDrops.scss";
-import { marketplace } from "../../utils/routes";
-import { recentDrops, slug } from "../../utils/utils";
 ---
 
 <section class="RecentDrops">
@@ -10,11 +13,7 @@ import { recentDrops, slug } from "../../utils/utils";
         {
             recentDrops.map((img) => (
                 <swiper-slide>
-                    <a href={marketplace.nfts + slug(img.alt)}>
-                        <img src={img.path} alt={img.alt} />
-                    </a>
-                    <p>{img.alt}</p>
-                    <b>0.98 Eth</b>
+                    <Nft nft={img} />
                 </swiper-slide>
             ))
         }

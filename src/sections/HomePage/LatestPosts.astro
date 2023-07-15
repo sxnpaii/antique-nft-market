@@ -6,7 +6,7 @@ import { posts } from "../../utils/posts";
 // utils
 import {slug} from "../../utils/utils";
 // routes
-import { mainRoutes } from "../../utils/routes";
+import { blog } from "../../utils/routes";
 ---
 
 <section class="LatestPosts">
@@ -20,7 +20,7 @@ import { mainRoutes } from "../../utils/routes";
                     <img src={post.img} alt={post.title} />
                     <h6>{post.title}</h6>
                     <p>{post.description}</p>
-                    <a href={mainRoutes.blog + slug(post.title)}>Read More<a/>
+                    <a href={blog.posts + slug(post.title)}>Read More<a/>
                 </swiper-slide>
             ))
         }

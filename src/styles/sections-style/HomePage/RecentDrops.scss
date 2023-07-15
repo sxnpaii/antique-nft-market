@@ -6,18 +6,4 @@ section.RecentDrops {
     h2 {
         @apply heading-text uppercase text-3xl md:text-5xl mb-10;
     }
-
-    .mySwiper.RecentDrops {
-        swiper-slide {
-            img{
-                @apply mb-5 w-full;
-            }
-            p{
-                @apply basic-text font-normal text-xl uppercase
-            }
-            b{
-                @apply basic-text uppercase
-            }
-        }
-    }
 }

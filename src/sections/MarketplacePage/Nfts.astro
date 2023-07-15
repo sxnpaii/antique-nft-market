@@ -1,0 +1,18 @@
+---
+// components
+import Nft from "../../components/Nft.astro";
+// routes
+import { marketplace } from "../../utils/routes";
+// utils
+import { recentDrops } from "../../utils/utils";
+// styles
+import "../../styles/sections-style/MarketplacePage/Nfts.scss";
+---
+
+<section class="Nfts">
+    <h2>Nfts</h2>
+    <div class="Container">
+        {recentDrops.map((item) => <Nft nft={item} />)}
+    </div>
+    <a href={marketplace.nfts}><button>See more</button></a>
+</section>

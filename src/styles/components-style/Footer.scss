@@ -1,7 +1,7 @@
 @use "../globals.scss";
 
 footer {
-    @apply w-full flexbox justify-between mt-32 mb-[100px] px-20;
+    @apply w-full flexbox gap-y-10 justify-between mt-32 mb-[100px] sm:px-20;
     .info{
         @apply max-w-[400px];
         h2{
@@ -12,8 +12,10 @@ footer {
         }
     }
     .menu{
-        @apply flex items-start gap-20;
+        @apply flex items-start flex-wrap gap-y-5 gap-x-20;
         ul{
+            @apply sm:w-auto w-full;
+            
             h6{
                 @apply heading-text text-xl font-bold uppercase mb-5
             }

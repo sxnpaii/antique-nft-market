@@ -1,0 +1,20 @@
+---
+// types
+import { CollectionsComponentProps } from "../utils/types";
+// utils
+import { slug } from "../utils/utils";
+// routes
+import { marketplace } from "../utils/routes";
+// props
+const { collections } = Astro.props as CollectionsComponentProps;
+// styles
+import "../styles/components-style/Collection.scss";
+---
+
+<div class="Collection">
+    <img src={collections.imgs[0]} alt={collections.title} />
+    <h6>{collections.title}</h6>
+    <a href={marketplace.collections + slug(collections.title)}>
+        View Collection</a
+    >
+</div>

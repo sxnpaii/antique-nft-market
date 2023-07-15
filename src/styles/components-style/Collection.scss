@@ -1,0 +1,18 @@
+@use "../globals.scss";
+
+.Collection {
+    @apply p-5 text-center break-inside-avoid;
+    background-color: globals.$BgWhite;
+
+    img {
+        @apply w-full mx-auto mb-5;
+    }
+
+    h6 {
+        @apply basic-text uppercase font-medium text-xl;
+    }
+
+    a {
+        @apply basic-text uppercase font-light hover:underline;
+    }
+}

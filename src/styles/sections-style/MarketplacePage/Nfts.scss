@@ -1,0 +1,17 @@
+@use "../../globals.scss";
+
+.Nfts{
+    @apply mt-32;
+    h2{
+        @apply heading-text md:text-5xl text-3xl uppercase text-center mb-10;
+    }
+    .Container{
+        @apply xl:columns-4
+    }
+    a {
+        button{
+            @apply basic-text uppercase border hover:bg-transparent px-5 py-3 block mx-auto overflow-hidden;
+            background-color: globals.$BgWhite;
+        }
+    }
+}
