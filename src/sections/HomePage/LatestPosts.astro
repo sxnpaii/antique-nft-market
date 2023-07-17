@@ -1,26 +1,19 @@
 ---
+// components
+import Post from "../../components/Post.astro";
 // styles
 import "../../styles/sections-style/HomePage/LatestPosts.scss";
 // posts
 import { posts } from "../../utils/posts";
-// utils
-import {slug} from "../../utils/utils";
-// routes
-import { blog } from "../../utils/routes";
 ---
 
 <section class="LatestPosts">
     <h2>Latest Informations</h2>
-    <swiper-container
-    class="mySwiper LatestPosts"
-    >
+    <swiper-container class="mySwiper LatestPosts">
         {
             posts.map((post) => (
                 <swiper-slide>
-                    <img src={post.img} alt={post.title} />
-                    <h6>{post.title}</h6>
-                    <p>{post.description}</p>
-                    <a href={blog.posts + slug(post.title)}>Read More<a/>
+                    <Post post={post} />
                 </swiper-slide>
             ))
         }
@@ -30,21 +23,20 @@ import { blog } from "../../utils/routes";
 <script>
     let swiperEl = document.querySelector(".mySwiper.LatestPosts");
 
-Object.assign(swiperEl, {
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
+    Object.assign(swiperEl, {
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            570: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
         },
-        570: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        992: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-        },
-    },
-});
+    });
 </script>
-

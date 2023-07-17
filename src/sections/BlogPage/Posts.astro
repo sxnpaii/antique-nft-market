@@ -1,0 +1,15 @@
+---
+// components
+import Post from "../../components/Post.astro";
+// posts
+import { posts } from "../../utils/posts";
+// styles
+import "../../styles/sections-style/BlogPage/Posts.scss";
+---
+
+<section class="Posts">
+    <h3>Posts</h3>
+    <div class="container">
+        {posts.map((post) => <Post post={post} />)}
+    </div>
+</section>

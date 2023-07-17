@@ -30,3 +30,8 @@
 - Fixes and deletions in **HomePage** sections
 - Typed props in all Components and created file `types.ts`
 - Removed unused other imports and `preact` in project (maybe i will add it later)
+
+### Commit №5
+- Created `/blog/` page and her sections
+- Created component **Post** 
+- Changes and fixed bugs on code in other pages and  sections

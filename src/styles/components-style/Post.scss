@@ -1,0 +1,21 @@
+@use "../globals.scss";
+
+.Post {
+    @apply break-inside-avoid mb-5;
+
+    img {
+        @apply mb-5 w-full;
+    }
+
+    h6 {
+        @apply basic-text font-medium uppercase text-[18px];
+    }
+
+    p {
+        @apply basic-text font-light opacity-70 mb-4
+    }
+
+    a {
+        @apply basic-text uppercase underline
+    }
+}

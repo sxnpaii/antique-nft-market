@@ -1,0 +1,11 @@
+@use "../../../styles/globals.scss";
+
+.Hero{
+    @apply mt-[150px] text-center;
+    h2{
+        @apply heading-text font-medium md:text-6xl text-4xl uppercase; 
+    }
+    p{
+        @apply basic-text font-light max-w-[750px] mx-auto;
+    }
+}
