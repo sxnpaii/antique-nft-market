@@ -1,0 +1,15 @@
+---
+// layout
+import Layout from "../../../layouts/Layout.astro";
+import Hero from "../../../sections/MarketplacePage/CollectionsPage/Hero.astro";
+import Collections from "../../../sections/MarketplacePage/CollectionsPage/Collections.astro";
+// ssr
+export const prerender = true;
+---
+
+<Layout>
+  <!-- hero -->
+  <Hero />
+  <!-- collections -->
+  <Collections />
+</Layout>

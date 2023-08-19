@@ -1,17 +1,25 @@
 ---
-// utils
-import { collections, slug } from "../../utils/utils";
 // routes
 import { marketplace } from "../../utils/routes";
+// collections
+import { Db } from "../../utils/supabase/adapter";
+const collections = await Db.getData({
+  table: "Collections",
+  column: "*",
+});
 // styles
 import "../../styles/sections-style/MarketplacePage/Collections.scss";
-import Collection from "../../components/Collection.astro";
+import Collection from "../../components/Collection";
 ---
 
 <section class="Collections">
-    <h3>Collections</h3>
-    <div class="Container">
-        {collections.map((image) => <Collection collections={image} />)}
-    </div>
-    <a href={marketplace.collections}><button>See more</button></a>
+  <h3>Collections</h3>
+  <div class="Container">
+    {
+      collections
+        .map((collection) => <Collection collections={collection} />)
+        .splice(0, 7)
+    }
+  </div>
+  <a href={marketplace.collections}><button>See more</button></a>
 </section>

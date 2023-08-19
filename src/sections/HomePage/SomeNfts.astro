@@ -1,34 +1,35 @@
 ---
 // components
-import Collection from "../../components/Collection.astro";
-// routes
-import { marketplace } from "../../utils/routes";
+import Collection from "../../components/Collection";
 // collections
-import { collections, slug } from "../../utils/utils";
+import { Db } from "../../utils/supabase/adapter";
+const collections = await Db.getData({ table: "Collections", column: "*" });
 // styles
 import "../../styles/sections-style/HomePage/SomeNfts.scss";
 ---
 
 <section class="SomeNfts">
-    <h2>Some NFTs collections</h2>
-    <swiper-container
-        class="mySwiper SomeNfts"
-        autoplay-delay="2500"
-        slides-per-view="4"
-    >
-        {
-            collections.map((colects) => (
-                <swiper-slide>
-                    <Collection collections={colects}/>
-                </swiper-slide>
-            ))
-        }
-    </swiper-container>
+  <h2>Some NFTs collections</h2>
+  <swiper-container
+    class="mySwiper SomeNfts"
+    autoplay-delay="2500"
+    slides-per-view="2"
+  >
+    {
+      collections
+        .map((el) => (
+          <swiper-slide>
+            <Collection collections={el} />
+          </swiper-slide>
+        ))
+        .splice(0, 3)
+    }
+  </swiper-container>
 </section>
 <script>
-    // render on client side
-    import { swiperBreakpoints } from "../../utils/utils";
+  // render on client side
+  import { swiperBreakpoints } from "../../utils/utils";
 
-    let swiperEl = document.querySelector(".mySwiper.SomeNfts");
-    swiperBreakpoints(swiperEl);
+  let swiperEl = document.querySelector(".mySwiper.SomeNfts");
+  swiperBreakpoints(swiperEl);
 </script>

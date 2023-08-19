@@ -1,0 +1,35 @@
+---
+// PATH
+const { collection_name } = Astro.params;
+// data getting class
+import { DynamicDb } from "../../../utils/supabase/adapter";
+// data
+const data = await DynamicDb.getOneData({
+  table: "Collections",
+  column: "*",
+  checkCol: "path",
+  eqTo: collection_name,
+});
+// layout
+import Layout from "../../../layouts/Layout.astro";
+// sections
+import ImagesSlider from "../../../sections/MarketplacePage/CollectionsPage/CollectionDynamicPage/ImagesSlider.astro";
+import Details from "../../../sections/MarketplacePage/CollectionsPage/CollectionDynamicPage/Details.astro";
+// styles
+import "../../../styles/pages-style/CollectionDynamicPage.scss"
+---
+
+{
+  data &&
+    data.map((el) => (
+      <Layout title={el.collection_name}>
+        <div class="Container ">
+          <ImagesSlider el={el} />
+          <Details el={el} />
+        </div>
+      </Layout>
+    ))
+}
+<script
+  src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"
+></script>

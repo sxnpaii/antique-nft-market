@@ -1,9 +1,12 @@
 // URL maker
 export const slug = (leter: string) => {
-    return leter
-        .toLowerCase()
-        .replace(/ /g, "-")
-        .replace(/[^\w-]+/g, "");
+    if (leter) {
+        return leter
+            .toLowerCase()
+            .replace(/ /g, "-")
+            .replace(/[^\w-]+/g, "");
+    }
+    return ""
 };
 // swiper breakpoints
 export const swiperBreakpoints = (target: any) => {
@@ -52,7 +55,7 @@ export const sliderImages = [
 ]
 
 // collections of SomeNfts in homePage
-export const collections = [
+ const collections = [
     {
         title: "suspendisse collection",
         imgs: [

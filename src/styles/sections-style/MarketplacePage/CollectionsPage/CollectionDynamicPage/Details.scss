@@ -1,0 +1,24 @@
+@use "../../../../globals.scss";
+
+.Details {
+    @apply md:w-[45%] text-center md:text-left md:mt-0;
+
+    h2 {
+        @apply font-medium text-2xl sm:text-4xl mb-3 heading-text uppercase;
+    }
+
+    p {
+        @apply basic-text;
+
+        span {
+            @apply font-light
+        }
+
+        a {
+            @apply font-light hover:underline
+        }
+    }
+    p.description{
+        @apply mt-8 w-full md:max-w-[80%] basic-text font-light
+    }
+}

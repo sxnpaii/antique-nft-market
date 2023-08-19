@@ -8,50 +8,48 @@ import "../styles/components-style/Header.scss";
 ---
 
 <header class="Header">
-    <a href={mainRoutes.home} class="HomeLink">Antique NFT</a>
-    <div class="Visible">
-        <ul class="Ul menu">
-            {
-                navlinks.map((link) => (
-                    <li>
-                        <a href={link.path}>{link.name}</a>
-                    </li>
-                ))
-            }
-        </ul>
-        <ul class="Auth">
-            {
-                loggedIn ? (
-                    <li>
-                        <a href={mainRoutes.profile}>My profile</a>
-                    </li>
-                ) : (
-                    <>
-                        <li>
-                            <a href={authorization.login}>Log in</a>
-                        </li>
-                        <li>
-                            <a href={authorization.signup}>Sign up</a>
-                        </li>
-                    </>
-                )
-            }
-        </ul>
-        <img src="../../../icons/menu.svg" alt="" />
-    </div>
+  <a href={mainRoutes.home} class="HomeLink">Antique NFT</a>
+  <div class="Visible">
+    <ul class="Ul menu">
+      {
+        navlinks.map((link) => (
+          <li>
+            <a href={link.path}>{link.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="Auth">
+      {
+        loggedIn ? (
+          <li>
+            <a href={mainRoutes.profile}>My profile</a>
+          </li>
+        ) : (
+          <>
+            <li>
+              <a href={authorization.login}>Log in</a>
+            </li>
+            <li>
+              <a href={authorization.signup}>Sign up</a>
+            </li>
+          </>
+        )
+      }
+    </ul>
+    <img src="../../../icons/menu.svg" alt="" />
+  </div>
 </header>
 <script>
-    // ? renders on client side
-    // toggle function in small formats
-    function toggle() {
-        let icon = document.querySelector("img");
-        let menu = document.querySelector(`header`);
-        let res = () => {
-            menu?.classList.toggle("active");
-        };
+  //? renders on client side
+  // toggle function in small formats
+  (() => {
+    let icon = document.querySelector("img");
+    let menu = document.querySelector(`header`);
+    let res = () => {
+      menu?.classList.toggle("active");
+    };
 
-        icon?.addEventListener("click", res);
-    }
-
-    toggle();
+    icon?.addEventListener("click", res);
+  })();
 </script>

@@ -5,15 +5,15 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../sections/MarketplacePage/Hero.astro";
 import Collections from "../../sections/MarketplacePage/Collections.astro";
 import Nfts from "../../sections/MarketplacePage/Nfts.astro";
-// styles
-import "../../styles/globals.scss";
+//ssr
+export const prerender = true;
 ---
 
 <Layout title="Marketpace || Antique NFT market" description="lorem">
-    <!-- Hero -->
-    <Hero />
-    <!-- Collections -->
-    <Collections />
-    <!-- Nfts -->
-    <Nfts/>
+  <!-- Hero -->
+  <Hero />
+  <!-- Nfts -->
+  <Nfts />
+  <!-- Collections -->
+  <Collections />
 </Layout>

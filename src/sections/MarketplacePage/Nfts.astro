@@ -1,18 +1,19 @@
 ---
 // components
-import Nft from "../../components/Nft.astro";
+import Nft from "../../components/Nft";
 // routes
 import { marketplace } from "../../utils/routes";
-// utils
-import { recentDrops } from "../../utils/utils";
+// nfts
+import { Db } from "../../utils/supabase/adapter";
+const recentDrops = await Db.getData({ table: "Nfts", column: "*" });
 // styles
 import "../../styles/sections-style/MarketplacePage/Nfts.scss";
 ---
 
 <section class="Nfts">
-    <h2>Nfts</h2>
-    <div class="Container">
-        {recentDrops.map((item) => <Nft nft={item} />)}
-    </div>
-    <a href={marketplace.nfts}><button>See more</button></a>
+  <h2>Nfts</h2>
+  <div class="Container">
+    {recentDrops && recentDrops.map((item) => <Nft nft={item} />)}
+  </div>
+  <a href={marketplace.nfts}><button>See more</button></a>
 </section>

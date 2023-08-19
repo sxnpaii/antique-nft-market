@@ -1,0 +1,35 @@
+---
+// routes
+import { mainRoutes } from "../../../../utils/routes";
+// details from props
+const { el } = Astro.props;
+// styles
+import "../../../../styles/sections-style/MarketplacePage/CollectionsPage/CollectionDynamicPage/Details.scss";
+---
+
+<div class="Details">
+  <h2 >
+    {el.collection_name}
+  </h2>
+  <p>
+    Created at:
+    <span>
+      {new Date(el.created_at).toDateString()}
+    </span>
+  </p>
+  <p>
+    Artist:
+    <a
+      href={`${mainRoutes.artists}${el.artist}`}
+    >
+      {el.artist}
+    </a>
+  </p>
+  <p>
+    Price:
+    <span>{el.price} Eth</span>
+  </p>
+  <p class="description ">
+    {el.collection_description}
+  </p>
+</div>

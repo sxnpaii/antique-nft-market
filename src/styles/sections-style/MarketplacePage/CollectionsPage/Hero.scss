@@ -1,0 +1,8 @@
+@use "../../../globals.scss";
+
+section.Hero{
+    @apply mt-[150px];
+    h2{
+        @apply heading-text uppercase md:text-5xl text-3xl text-center font-medium mb-10
+    }
+}

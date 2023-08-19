@@ -1,46 +1,51 @@
 ---
 // components
-import Nft from "../../components/Nft.astro";
-// utils, images
-import { sliderImages } from "../../utils/utils";
+import Nft from "../../components/Nft";
+// nfts
+import { Db } from "../../utils/supabase/adapter";
+const sliderImages = await Db.getData({ table: "Nfts", column: "*" });
+// console.log(sliderImages);
 // styles
 import "../../styles/sections-style/HomePage/HeroSlider.scss";
 ---
 
 <section class="Hero">
-    <h1>Antique NFT market</h1>
-    <swiper-container
-        class="mySwiper Hero"
-        autoplay-delay="2500"
-        centered-slides="true"
-    >
-        {
-            sliderImages.map((img) => (
-                <swiper-slide class="swiper-slide">
-                    <Nft nft={img} />
-                </swiper-slide>
-            ))
-        }
-    </swiper-container>
+  <h1>Antique NFT market</h1>
+  <swiper-container
+    class="mySwiper Hero"
+    autoplay-delay="2500"
+    centered-slides="true"
+  >
+    {
+      sliderImages &&
+        sliderImages
+          .map((nft) => (
+            <swiper-slide class="swiper-slide">
+              <Nft nft={nft} />
+            </swiper-slide>
+          ))
+          .splice(0, 3)
+    }
+  </swiper-container>
 </section>
 
 <script>
-    let swiperEl = document.querySelector(".mySwiper.Hero");
+  let swiperEl = document.querySelector(".mySwiper.Hero");
 
-    Object.assign(swiperEl, {
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            },
-            450: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-        },
-    });
+  Object.assign(swiperEl, {
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      450: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
 </script>

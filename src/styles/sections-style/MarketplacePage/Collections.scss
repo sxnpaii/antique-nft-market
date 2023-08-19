@@ -8,7 +8,7 @@
     }
 
     .Container {
-        @apply xl:columns-4 md:columns-3 sm:columns-2 gap-5 mb-10;
+        @apply xl:columns-4 md:columns-3 columns-2 gap-5 mb-10;
     }
 
     a {

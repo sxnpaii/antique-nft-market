@@ -1,0 +1,11 @@
+@use "../../../../globals.scss";
+
+swiper-container.OneCollection {
+    @apply w-[80%] md:w-[50%];
+
+    swiper-slide {
+        img {
+            @apply mx-auto w-full md:w-full lg:w-[75%];
+        }
+    }
+}

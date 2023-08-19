@@ -1,0 +1,23 @@
+---
+// images from props
+const { el } = Astro.props;
+import "../../../../styles/sections-style/MarketplacePage/CollectionsPage/CollectionDynamicPage/ImagesSlider.scss";
+---
+
+<swiper-container
+  class="mySwiper OneCollection "
+  slides-per-view="1"
+  centered-slides="true"
+  autoplay-delay="2500"
+  autoplay-disable-on-interaction="false"
+  space-between="20"
+>
+  {
+    el &&
+      el.images.map((img) => (
+        <swiper-slide>
+          <img src={img} alt="" class="" />
+        </swiper-slide>
+      ))
+  }
+</swiper-container>

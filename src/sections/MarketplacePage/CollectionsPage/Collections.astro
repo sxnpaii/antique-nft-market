@@ -1,0 +1,14 @@
+---
+// components
+import Collection from  "../../../components/Collection"
+// styles
+import "../../../styles/sections-style/MarketplacePage/CollectionsPage/Collections.scss";
+// db connection
+import { Db } from "../../../utils/supabase/adapter";
+// data
+const data = await Db.getData({ table: "Collections", column: "*" });
+---
+
+<section class="Collections">
+  {data.map((el) => <Collection collections={el} />)}
+</section>

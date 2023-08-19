@@ -1,28 +1,32 @@
 ---
 // components
-import Nft from "../../components/Nft.astro";
-// utils
-import { recentDrops } from "../../utils/utils";
+import Nft from "../../components/Nft";
+// nfts
+import { Db } from "../../utils/supabase/adapter";
+const data = await Db.getData({ table: "Nfts", column: "*" });
 // styles
 import "../../styles/sections-style/HomePage/RecentDrops.scss";
 ---
 
 <section class="RecentDrops">
-    <h2>Recent drops</h2>
-    <swiper-container class="mySwiper RecentDrops">
-        {
-            recentDrops.map((img) => (
-                <swiper-slide>
-                    <Nft nft={img} />
-                </swiper-slide>
-            ))
-        }
-    </swiper-container>
+  <h2>Recent drops</h2>
+  <swiper-container class="mySwiper RecentDrops">
+    {
+      data &&
+        data
+          .map((nfts) => (
+            <swiper-slide>
+              <Nft nft={nfts} />
+            </swiper-slide>
+          ))  
+          .splice(3, 7)
+    }
+  </swiper-container>
 </section>
 <script>
-    // render on client side
-    import { swiperBreakpoints } from "../../utils/utils";
+  // render on client side
+  import { swiperBreakpoints } from "../../utils/utils";
 
-    let swiperEl = document.querySelector(".mySwiper.RecentDrops");
-    swiperBreakpoints(swiperEl);
+  let swiperEl = document.querySelector(".mySwiper.RecentDrops");
+  swiperBreakpoints(swiperEl);
 </script>
