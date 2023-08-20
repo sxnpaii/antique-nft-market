@@ -1,0 +1,5 @@
+@use "../../../globals.scss";
+
+section.Nfts {
+    @apply md:columns-3 columns-2;
+}

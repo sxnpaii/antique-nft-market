@@ -56,3 +56,8 @@
 - And their divided sections
 - Deleted images in `public/` folder
 - Fixed flex layouts in `marketplace` page
+
+### Commit №7 
+
+- Created and completed `marketplace/nfts` page
+- Recieved datas for this page from Db
