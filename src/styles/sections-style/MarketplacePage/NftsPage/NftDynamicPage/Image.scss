@@ -1,0 +1,8 @@
+@use "../../../../globals.scss";
+
+.Img{
+    @apply w-[80%] md:w-[50%] mx-auto md:mx-0;
+    img{
+        @apply mx-auto w-full md:w-full lg:w-[75%];
+    }
+}

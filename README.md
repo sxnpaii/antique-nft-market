@@ -57,7 +57,19 @@
 - Deleted images in `public/` folder
 - Fixed flex layouts in `marketplace` page
 
-### Commit №7 
+ > Added records on commit n8 👇, because i forget add those on commit n6 : )
+
+- Added library `preact` for `.tsx` syntax
+- Added `dotenv` package for securely save API keys
+
+### Commit №7
 
 - Created and completed `marketplace/nfts` page
 - Recieved datas for this page from Db
+
+### Commit №8
+
+- Created and completed `marketplace/nfts/[name]` _dynamic page_
+- Recieved datas for this page from Db
+- Enabled SSR mode in `marketplace/nfts` page
+- Fixed tags in `marketplace/collections/[...collection_name]` _dynamic page_

@@ -1,0 +1,32 @@
+---
+// path
+const { name } = Astro.params;
+// nft
+import { DynamicDb } from "../../../utils/supabase/adapter";
+// call datas
+const nft = await DynamicDb.getOneData({
+  table: "Nfts",
+  column: "*, nft_attributes(*)",
+  checkCol: "path",
+  eqTo: name,
+});
+// layout
+import Layout from "../../../layouts/Layout.astro";
+// sections
+import Image from "../../../sections/MarketplacePage/NftsPage/NftDynamicPage/Image.astro";
+import Details from "../../../sections/MarketplacePage/NftsPage/NftDynamicPage/Details.astro";
+//styles
+import "../../../styles/pages-style/NftDynamicPage.scss"
+---
+
+{
+  nft &&
+    nft.map((nft) => (
+      <Layout>
+        <section class="Container">
+          <Image img={nft.img_url} />
+          <Details nft={nft} />
+        </section>
+      </Layout>
+    ))
+}

@@ -1,0 +1,39 @@
+---
+// nft from props
+const {nft} = Astro.props;
+// routes
+import {mainRoutes} from "../../../../utils/routes";
+// styles
+import "../../../../styles/sections-style/MarketplacePage/NftsPage/NftDynamicPage/Details.scss";
+---
+
+<section class="Details">
+    <h2 >
+      {nft.name}
+    </h2>
+    <p>
+      Created at:
+      <span>
+        {new Date(nft.created_at).toDateString()}
+      </span>
+    </p>
+    <p>
+      Artist:
+      <a
+        href={`${mainRoutes.artists}${nft.nft_attributes.artist}`}
+      >
+        {nft.nft_attributes.artist}
+      </a>
+    </p>
+    <p>
+        Style:
+        <span>{nft.nft_attributes.style}</span>
+    </p>
+    <p class="price">
+      Price:
+      <span>{nft.price} Eth</span>
+    </p>
+    <p class="description">
+      {nft.description}
+    </p>
+  </section>

@@ -23,10 +23,10 @@ import "../../../styles/pages-style/CollectionDynamicPage.scss"
   data &&
     data.map((el) => (
       <Layout title={el.collection_name}>
-        <div class="Container ">
+        <section class="Container">
           <ImagesSlider el={el} />
           <Details el={el} />
-        </div>
+        </section>
       </Layout>
     ))
 }
