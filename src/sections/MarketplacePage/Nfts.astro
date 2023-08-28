@@ -3,9 +3,14 @@
 import Nft from "../../components/Nft";
 // routes
 import { marketplace } from "../../utils/routes";
+// types
+import { Collections } from "../../utils/types";
 // nfts
 import { Db } from "../../utils/supabase/adapter";
-const recentDrops = await Db.getData({ table: "Nfts", column: "*" });
+const recentDrops = (await Db.getData({
+  table: "Nfts",
+  column: "*",
+})) as unknown as Collections;
 // styles
 import "../../styles/sections-style/MarketplacePage/Nfts.scss";
 ---

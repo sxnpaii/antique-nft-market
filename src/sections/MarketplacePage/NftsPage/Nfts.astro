@@ -1,7 +1,12 @@
 ---
+// types
+import { Nfts } from "../../../utils/types";
 // Nfts from db
 import { Db } from "../../../utils/supabase/adapter";
-const data = await Db.getData({ table: "Nfts", column: "*" });
+const data = (await Db.getData({
+  table: "Nfts",
+  column: "*",
+})) as unknown as Nfts;
 // components
 import Nft from "../../../components/Nft";
 // styles
@@ -9,5 +14,5 @@ import "../../../styles/sections-style/MarketplacePage/NftsPage/Nfts.scss";
 ---
 
 <section class="Nfts">
-  {data && data.map(el => <Nft nft={el}/>)}
+  {data && data.map((el) => <Nft nft={el} />)}
 </section>

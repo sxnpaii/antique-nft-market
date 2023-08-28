@@ -1,9 +1,14 @@
 ---
 // components
 import Collection from "../../components/Collection";
+// types
+import { Collections } from "../../utils/types";
 // collections
 import { Db } from "../../utils/supabase/adapter";
-const collections = await Db.getData({ table: "Collections", column: "*" });
+const collections = (await Db.getData({
+  table: "Collections",
+  column: "*",
+})) as unknown as Collections;
 // styles
 import "../../styles/sections-style/HomePage/SomeNfts.scss";
 ---

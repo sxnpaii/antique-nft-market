@@ -3,40 +3,47 @@
 import Post from "../../components/Post";
 // styles
 import "../../styles/sections-style/HomePage/LatestPosts.scss";
+//
+import { Collections } from "../../utils/types";
 // posts
-import { posts } from "../../utils/posts";
+import { Db } from "../../utils/supabase/adapter";
+const posts = (await Db.getData({
+  table: "Posts",
+  column: "*",
+})) as unknown as Collections;
 ---
 
 <section class="LatestPosts">
-    <h2>Latest Informations</h2>
-    <swiper-container class="mySwiper LatestPosts">
-        {
-            posts.map((post) => (
-                <swiper-slide>
-                    <Post post={post} />
-                </swiper-slide>
-            ))
-        }
-    </swiper-container>
+  <h2>Latest Informations</h2>
+  <swiper-container class="mySwiper LatestPosts">
+    {
+      posts &&
+        posts.map((post) => (
+          <swiper-slide>
+            <Post post={post} />
+          </swiper-slide>
+        ))
+    }
+  </swiper-container>
 </section>
 
 <script>
-    let swiperEl = document.querySelector(".mySwiper.LatestPosts");
+  let swiperEl = document.querySelector(".mySwiper.LatestPosts");
 
-    Object.assign(swiperEl, {
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            },
-            570: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-        },
-    });
+  Object.assign(swiperEl, {
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      570: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
 </script>

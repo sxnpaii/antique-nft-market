@@ -55,7 +55,7 @@ export const sliderImages = [
 ]
 
 // collections of SomeNfts in homePage
- const collections = [
+const collections = [
     {
         title: "suspendisse collection",
         imgs: [

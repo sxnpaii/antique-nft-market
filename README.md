@@ -73,3 +73,11 @@
 - Recieved datas for this page from Db
 - Enabled SSR mode in `marketplace/nfts` page
 - Fixed tags in `marketplace/collections/[...collection_name]` _dynamic page_
+
+### Commit №9
+
+- Formatted all source code
+- Removed images of posts
+- Removed mock datas for posts and `utils/posts.ts`
+- Configured component **Post** for datas from Db
+- Fully typed requested datas

@@ -1,12 +1,16 @@
 ---
 // components
-import Collection from  "../../../components/Collection"
+import Collection from "../../../components/Collection";
 // styles
 import "../../../styles/sections-style/MarketplacePage/CollectionsPage/Collections.scss";
-// db connection
+// types
+import { Collections } from "../../../utils/types";
+// collections
 import { Db } from "../../../utils/supabase/adapter";
-// data
-const data = await Db.getData({ table: "Collections", column: "*" });
+const data = (await Db.getData({
+  table: "Collections",
+  column: "*",
+})) as unknown as Collections;
 ---
 
 <section class="Collections">

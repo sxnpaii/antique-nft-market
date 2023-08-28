@@ -108,6 +108,7 @@ export interface Database {
           description: string | null
           id: string
           img_url: string | null
+          path: string | null
           tags: string[] | null
           title: string | null
         }
@@ -118,6 +119,7 @@ export interface Database {
           description?: string | null
           id?: string
           img_url?: string | null
+          path?: string | null
           tags?: string[] | null
           title?: string | null
         }
@@ -128,6 +130,7 @@ export interface Database {
           description?: string | null
           id?: string
           img_url?: string | null
+          path?: string | null
           tags?: string[] | null
           title?: string | null
         }

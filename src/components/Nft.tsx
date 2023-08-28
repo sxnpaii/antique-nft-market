@@ -4,9 +4,11 @@ import { marketplace } from "../utils/routes";
 import { slug } from "../utils/utils";
 // styles
 import "../styles/components-style/Nft.scss";
+// types
+import { Nfts } from "../utils/types";
 
 
-const Nft = ({ nft }) => {
+const Nft = ({ nft }:{nft: Nfts}) => {
     return (
         <div class="Nft">
             <a href={marketplace.nfts + slug(nft.name)}>

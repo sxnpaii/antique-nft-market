@@ -1,10 +1,14 @@
 ---
 // components
 import Nft from "../../components/Nft";
+// types
+import { Collections } from "../../utils/types";
 // nfts
 import { Db } from "../../utils/supabase/adapter";
-const sliderImages = await Db.getData({ table: "Nfts", column: "*" });
-// console.log(sliderImages);
+const sliderImages = (await Db.getData({
+  table: "Nfts",
+  column: "*",
+})) as unknown as Collections;
 // styles
 import "../../styles/sections-style/HomePage/HeroSlider.scss";
 ---

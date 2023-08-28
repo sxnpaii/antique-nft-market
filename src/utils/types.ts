@@ -23,3 +23,15 @@ export interface Collections {
     path: string | null
     price: number | null
 }
+
+export interface Posts {
+    author_artist: string | null
+    content: string | null
+    created_at: string | null
+    description: string | null
+    id: string
+    img_url: string | null
+    path: string | null
+    tags: string[] | null
+    title: string | null
+}

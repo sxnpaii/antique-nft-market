@@ -1,15 +1,21 @@
 ---
 // components
 import Post from "../../components/Post";
+// types
+import { Posts } from "../../utils/types";
 // posts
-import { posts } from "../../utils/posts";
+import { Db } from "../../utils/supabase/adapter";
+const posts = (await Db.getData({
+  table: "Posts",
+  column: "*",
+})) as unknown as Posts;
 // styles
 import "../../styles/sections-style/BlogPage/Posts.scss";
 ---
 
 <section class="Posts">
-    <h3>Posts</h3>
-    <div class="container">
-        {posts.map((post) => <Post post={post} />)}
-    </div>
+  <h3>Posts</h3>
+  <div class="container">
+    {posts.map((post) => <Post post={post} />)}
+  </div>
 </section>
