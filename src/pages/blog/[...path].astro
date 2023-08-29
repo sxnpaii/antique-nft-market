@@ -1,0 +1,60 @@
+---
+import Layout from "../../layouts/Layout.astro";
+// types
+import { Posts } from "../../utils/types";
+// path
+const { path } = Astro.params;
+// request data
+import { DynamicDb } from "../../utils/supabase/adapter";
+const post = (await DynamicDb.getOneData({
+  table: "Posts",
+  column: "*",
+  checkCol: "path",
+  eqTo: path,
+})) as unknown as Posts;
+// routes
+import { blog, mainRoutes } from "../../utils/routes";
+// utils
+import { slug } from "../../utils/utils";
+// styles
+import "../../styles/pages-style/PostDynamicPage.scss";
+---
+
+{
+  post &&
+    post.map((content) => (
+      <Layout title={`${content.title} | Blog || Antique NFT Market`}>
+        <div class="Post">
+          <div class="Head">
+            <div class="meta">
+              <h6 class="artist">
+                Author:
+                <a href={mainRoutes.artists + slug(content.author_artist)}>
+                  {content.author_artist}
+                </a>
+              </h6>
+              <p class="date">
+                Created at:
+                <span>{new Date(content.created_at).toDateString()}</span>
+              </p>
+            </div>
+            <ul class="tags">
+              <h6>Tags:</h6>
+              {content.tags &&
+                content.tags.map((tag) => (
+                  <li>
+                    <a href={blog.tags + slug(tag)}>#{tag}</a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+          <div class="Body">
+            <h3>{content.title}</h3>
+            <p class="description">{content.description}</p>
+            <img src={content.img_url} alt={content.title} />
+            <p>{content.content}</p>
+          </div>
+        </div>
+      </Layout>
+    ))
+}

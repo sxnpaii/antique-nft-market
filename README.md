@@ -81,3 +81,10 @@
 - Removed mock datas for posts and `utils/posts.ts`
 - Configured component **Post** for datas from Db
 - Fully typed requested datas
+
+### Commit №10
+
+- Removed rendering section `Tags` in page `/blog/`
+- Added and completed `blog/[...path].astro` _dynamic page_
+- Modified component **Post**
+- Changes in routes `blog`

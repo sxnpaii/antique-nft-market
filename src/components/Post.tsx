@@ -9,13 +9,14 @@ import { Posts } from "../utils/types";
 const Post = ({ post }: { post: Posts }) => {
     return (
         <div class="Post">
-            <img src={post.img_url} alt={post.title} />
+            <a href={post.path}>
+                <img src={post.img_url} alt={post.title} />
+            </a>
             <h6>{post.title}</h6>
             <p>{post.description}</p>
-            <a href={blog.posts + post.path}>Read More</a>
+            <a href={blog.main + post.path}>Read More</a>
         </div>
     )
 }
 
 export default Post
-

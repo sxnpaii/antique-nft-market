@@ -26,6 +26,5 @@ export const navlinks = [
 
 export const blog = {
     main: "/blog/",
-    posts: "/blog/posts/",
     tags: "/blog/tags/"
 }

@@ -1,0 +1,68 @@
+@use "../globals.scss";
+
+.Post {
+  @apply w-[65%] mx-auto mt-32;
+
+  .Head {
+    @apply flexbox justify-between mb-5;
+
+    .meta {
+      p.date {
+        @apply basic-text;
+
+        span {
+          @apply font-light;
+        }
+      }
+
+      h6.artist {
+        @apply heading-text font-bold;
+
+        a {
+          @apply capitalize font-normal;
+
+          &:hover {
+            @apply underline
+          }
+        }
+      }
+
+    }
+
+    ul.tags {
+      @apply flexbox gap-3;
+
+      h6 {
+        @apply basic-text;
+      }
+
+      li {
+        @apply font-light text-right;
+
+        &:hover {
+          @apply underline;
+        }
+      }
+    }
+  }
+
+  .Body {
+    @apply text-center;
+
+    h3 {
+      @apply heading-text text-4xl uppercase mb-3 font-medium;
+    }
+
+    p.description {
+      @apply basic-text font-light mb-8;
+    }
+
+    img {
+      @apply w-full mb-3;
+    }
+
+    p {
+      @apply basic-text font-light
+    }
+  }
+}

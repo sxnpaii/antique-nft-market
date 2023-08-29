@@ -3,12 +3,14 @@
 .Post {
     @apply break-inside-avoid mb-5;
 
-    img {
-        @apply mb-5 w-full;
+    a {
+        img {
+            @apply mb-5 w-full
+        }
     }
 
     h6 {
-        @apply basic-text font-medium uppercase text-[18px];
+        @apply basic-text font-medium uppercase text-[18px]
     }
 
     p {
