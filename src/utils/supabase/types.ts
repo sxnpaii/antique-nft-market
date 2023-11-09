@@ -9,9 +9,51 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      Artists: {
+        Row: {
+          avatar: string | null
+          collections: string[] | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          nfts: string[] | null
+          password: string | null
+          phone_num: string | null
+          posts: string[] | null
+          username: string | null
+        }
+        Insert: {
+          avatar?: string | null
+          collections?: string[] | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          nfts?: string[] | null
+          password?: string | null
+          phone_num?: string | null
+          posts?: string[] | null
+          username?: string | null
+        }
+        Update: {
+          avatar?: string | null
+          collections?: string[] | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          nfts?: string[] | null
+          password?: string | null
+          phone_num?: string | null
+          posts?: string[] | null
+          username?: string | null
+        }
+        Relationships: []
+      }
       Collections: {
         Row: {
-          artist: string | null
+          artist: string
           collection_description: string | null
           collection_name: string | null
           created_at: string | null
@@ -21,7 +63,7 @@ export interface Database {
           price: number | null
         }
         Insert: {
-          artist?: string | null
+          artist: string
           collection_description?: string | null
           collection_name?: string | null
           created_at?: string | null
@@ -31,7 +73,7 @@ export interface Database {
           price?: number | null
         }
         Update: {
-          artist?: string | null
+          artist?: string
           collection_description?: string | null
           collection_name?: string | null
           created_at?: string | null
@@ -40,29 +82,19 @@ export interface Database {
           path?: string | null
           price?: number | null
         }
-        Relationships: []
-      }
-      nft_attributes: {
-        Row: {
-          artist: string | null
-          id: string
-          style: string | null
-        }
-        Insert: {
-          artist?: string | null
-          id?: string
-          style?: string | null
-        }
-        Update: {
-          artist?: string | null
-          id?: string
-          style?: string | null
-        }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "Collections_artist_fkey"
+            columns: ["artist"]
+            isOneToOne: false
+            referencedRelation: "Artists"
+            referencedColumns: ["id"]
+          }
+        ]
       }
       Nfts: {
         Row: {
-          attributes: string | null
+          artist: string
           created_at: string | null
           description: string | null
           id: string
@@ -70,9 +102,10 @@ export interface Database {
           name: string | null
           path: string | null
           price: number | null
+          style: string[] | null
         }
         Insert: {
-          attributes?: string | null
+          artist: string
           created_at?: string | null
           description?: string | null
           id?: string
@@ -80,9 +113,10 @@ export interface Database {
           name?: string | null
           path?: string | null
           price?: number | null
+          style?: string[] | null
         }
         Update: {
-          attributes?: string | null
+          artist?: string
           created_at?: string | null
           description?: string | null
           id?: string
@@ -90,19 +124,21 @@ export interface Database {
           name?: string | null
           path?: string | null
           price?: number | null
+          style?: string[] | null
         }
         Relationships: [
           {
-            foreignKeyName: "Nfts_attributes_fkey"
-            columns: ["attributes"]
-            referencedRelation: "nft_attributes"
+            foreignKeyName: "Nfts_artist_fkey"
+            columns: ["artist"]
+            isOneToOne: false
+            referencedRelation: "Artists"
             referencedColumns: ["id"]
           }
         ]
       }
       Posts: {
         Row: {
-          author_artist: string | null
+          artist: string
           content: string | null
           created_at: string | null
           description: string | null
@@ -113,7 +149,7 @@ export interface Database {
           title: string | null
         }
         Insert: {
-          author_artist?: string | null
+          artist: string
           content?: string | null
           created_at?: string | null
           description?: string | null
@@ -124,7 +160,7 @@ export interface Database {
           title?: string | null
         }
         Update: {
-          author_artist?: string | null
+          artist?: string
           content?: string | null
           created_at?: string | null
           description?: string | null
@@ -134,7 +170,15 @@ export interface Database {
           tags?: string[] | null
           title?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "Posts_artist_fkey"
+            columns: ["artist"]
+            isOneToOne: false
+            referencedRelation: "Artists"
+            referencedColumns: ["id"]
+          }
+        ]
       }
     }
     Views: {

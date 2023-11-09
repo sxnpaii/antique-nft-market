@@ -1,22 +1,24 @@
 ---
+// types
+import { Nfts } from "../../../utils/types";
 // path
 const { name } = Astro.params;
 // nft
-import { DynamicDb } from "../../../utils/supabase/adapter";
+import { DynamicDb, supabase } from "../../../utils/supabase/adapter";
 // call datas
 const nft = await DynamicDb.getOneData({
   table: "Nfts",
-  column: "*, nft_attributes(*)",
+  column: "*, artist(*)",
   checkCol: "path",
   eqTo: name,
-});
+}) as unknown as Nfts;
 // layout
 import Layout from "../../../layouts/Layout.astro";
 // sections
 import Image from "../../../sections/MarketplacePage/NftsPage/NftDynamicPage/Image.astro";
 import Details from "../../../sections/MarketplacePage/NftsPage/NftDynamicPage/Details.astro";
 //styles
-import "../../../styles/pages-style/NftDynamicPage.scss"
+import "../../../styles/pages-style/NftDynamicPage.scss";
 ---
 
 {
@@ -29,4 +31,4 @@ import "../../../styles/pages-style/NftDynamicPage.scss"
         </section>
       </Layout>
     ))
-}
+} 

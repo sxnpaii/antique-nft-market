@@ -9,7 +9,7 @@ import { Posts } from "../utils/types";
 const Post = ({ post }: { post: Posts }) => {
     return (
         <div class="Post">
-            <a href={post.path}>
+            <a href={blog.main + post.path}>
                 <img src={post.img_url} alt={post.title} />
             </a>
             <h6>{post.title}</h6>

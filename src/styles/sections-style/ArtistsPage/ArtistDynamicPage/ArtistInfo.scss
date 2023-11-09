@@ -1,0 +1,14 @@
+@use "../../../globals.scss";
+
+.ArtistInfo{
+  @apply flex items-center justify-center max-sm:flex-col gap-y-10 gap-x-24 h-screen;
+  img{
+    @apply transition hover:-rotate-6 cursor-grab max-w-[270px] border-[13px] border-[#{globals.$BgWhite}];
+  }
+  .Info{
+    @apply sm:max-w-[40%] basic-text;
+    h3{
+      @apply text-5xl heading-text mb-5
+    }
+  }
+}

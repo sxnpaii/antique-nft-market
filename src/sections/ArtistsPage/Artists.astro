@@ -1,0 +1,15 @@
+---
+import Artist from "../../components/Artist";
+import { Db } from "../../utils/supabase/adapter";
+import { Artists } from "../../utils/types";
+import "../../styles/sections-style/ArtistsPage/Artists.scss";
+
+const artists = (await Db.getData({
+  table: "Artists",
+  column: "*",
+})) as unknown as Artists;
+---
+
+<section class="Artists">
+  {artists.map((artist) => <Artist artist={artist} />)}
+</section>

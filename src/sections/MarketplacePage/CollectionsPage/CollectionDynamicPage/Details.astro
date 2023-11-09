@@ -7,7 +7,7 @@ const { el } = Astro.props;
 import "../../../../styles/sections-style/MarketplacePage/CollectionsPage/CollectionDynamicPage/Details.scss";
 ---
 
-<section class="Details">
+<section class="Details"> 
   <h2>
     {el.collection_name}
   </h2>
@@ -19,8 +19,8 @@ import "../../../../styles/sections-style/MarketplacePage/CollectionsPage/Collec
   </p>
   <p>
     Artist:
-    <a href={`${mainRoutes.artists}${el.artist}`}>
-      {el.artist}
+    <a href={`${mainRoutes.artists}${el.artist.username}`}>
+      {el.artist.full_name}
     </a>
   </p>
   <p>

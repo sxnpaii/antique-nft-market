@@ -19,13 +19,13 @@ import "../../../../styles/sections-style/MarketplacePage/NftsPage/NftDynamicPag
   </p>
   <p>
     Artist:
-    <a href={`${mainRoutes.artists}${nft.nft_attributes.artist}`}>
-      {nft.nft_attributes.artist}
+    <a href={`${mainRoutes.artists}${nft.artist.username}`}>
+      {nft.artist.full_name}
     </a>
   </p>
   <p>
-    Style:
-    <span>{nft.nft_attributes.style}</span>
+    Styles:
+    {nft && nft.style.map((styl) => <span>{styl}</span>)}
   </p>
   <p class="price">
     Price:

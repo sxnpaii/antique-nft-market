@@ -58,11 +58,11 @@
     }
 
     img {
-      @apply w-full mb-3;
+      @apply w-full mb-10;
     }
 
-    p {
-      @apply basic-text font-light
+    p.content{
+      @apply basic-text font-light text-lg text-left leading-relaxed
     }
   }
 }

@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ArtistInfo from "../sections/ArtistsPage/ArtistDynamicPage/ArtistInfo.astro";
+const { artistInfo, param } = Astro.props;
+
+const dynamicUrlGen = (param) => {
+  const artist = {
+    main: `/artists/${param}`,
+    collections: `/artists/${param}/collections`,
+    posts: `/artists/${param}/posts`,
+  };
+  return artist;
+};
+
+import "../styles/layouts-style/Artistlayout.scss"
+---
+
+<Layout title={artistInfo.full_name}>
+  <ArtistInfo artistData={artistInfo} />
+  <ul class="ItemsLinks">
+    <li>
+      <a
+        href={dynamicUrlGen(param).main}>Nfts</a
+      >
+    </li>
+    <li>
+      <a
+        href={dynamicUrlGen(param).collections}>Collections</a
+      >
+    </li>
+    <li>
+      <a
+        href={dynamicUrlGen(param).posts}>Posts</a
+      >
+    </li>
+  </ul>
+
+  <section class="Items ">
+    <slot />
+  </section>
+</Layout>

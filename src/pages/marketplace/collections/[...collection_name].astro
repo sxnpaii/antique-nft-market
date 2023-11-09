@@ -1,4 +1,6 @@
 ---
+// types
+import { Collections } from "../../../utils/types";
 // PATH
 const { collection_name } = Astro.params;
 // data getting class
@@ -6,10 +8,10 @@ import { DynamicDb } from "../../../utils/supabase/adapter";
 // data
 const data = await DynamicDb.getOneData({
   table: "Collections",
-  column: "*",
+  column: "*, artist(*)",
   checkCol: "path",
   eqTo: collection_name,
-});
+}) as unknown as Collections;
 // layout
 import Layout from "../../../layouts/Layout.astro";
 // sections

@@ -1,0 +1,32 @@
+---
+import Nft from "../../../components/Nft";
+import ArtistLayout from "../../../layouts/ArtistLayout.astro";
+import "../../../styles/pages-style/ArtistDynamicPage.scss";
+
+const { username } = Astro.params;
+// Nfts
+import { DynamicDb } from "../../../utils/supabase/adapter";
+import { Artists, Nfts } from "../../../utils/types";
+const artistData = (await DynamicDb.getOneData({
+  table: "Artists",
+  column: "*",
+  checkCol: "username",
+  eqTo: username,
+})) as unknown as Artists;
+
+const artistNfts = (await DynamicDb.getOneData({
+  table: "Nfts",
+  column: "*",
+  checkCol: "artist",
+  eqTo: artistData.map((el) => el.id),
+})) as unknown as Nfts;
+---
+
+{
+  artistData &&
+    artistData.map((artist) => (
+      <ArtistLayout artistInfo={artist} param={username}>
+        {artistNfts && artistNfts.map((nft) => <Nft nft={nft} />)}
+      </ArtistLayout>
+    ))
+}

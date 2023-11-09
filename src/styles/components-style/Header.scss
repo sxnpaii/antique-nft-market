@@ -2,7 +2,7 @@
 
 
 .Header {
-    @apply flexbox justify-between xl:px-[145px] py-5 fixed left-0 w-full border backdrop-blur-xl bg-[#ffffff80] mb-[70px] z-50;
+    @apply flexbox justify-between xl:px-[145px] py-5 fixed left-0 w-full border-b bg-[#ffffff] bg-opacity-90 mb-[70px] z-50;
     align-items: start;
     height: 70px;
     overflow: hidden;
@@ -33,12 +33,16 @@
             text-align: right;
 
             li {
-                border-bottom: 1px solid black;
+                @apply border-b border-black mb-10;
             }
         }
 
         a {
             @apply basic-text font-light hover:underline;
+
+            @media (max-width: 908px) {
+                @apply text-3xl;
+            }
         }
     }
 
@@ -63,7 +67,7 @@
 }
 
 .active {
-    height: auto !important;
+    height: 100vh !important;
     overflow: visible;
     transition: 330ms;
 }

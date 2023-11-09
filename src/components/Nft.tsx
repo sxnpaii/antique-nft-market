@@ -8,7 +8,7 @@ import "../styles/components-style/Nft.scss";
 import { Nfts } from "../utils/types";
 
 
-const Nft = ({ nft }:{nft: Nfts}) => {
+const Nft = ({ nft }: { nft: Nfts }) => {
     return (
         <div class="Nft">
             <a href={marketplace.nfts + slug(nft.name)}>

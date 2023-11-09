@@ -1,0 +1,31 @@
+---
+import Collection from "../../../components/Collection";
+import ArtistLayout from "../../../layouts/ArtistLayout.astro";
+
+import { DynamicDb } from "../../../utils/supabase/adapter";
+import { Artists, Collections } from "../../../utils/types";
+const { username } = Astro.params;
+
+const artistData = (await DynamicDb.getOneData({
+  table: "Artists",
+  column: "*",
+  checkCol: "username",
+  eqTo: username,
+})) as unknown as Artists;
+
+const artistCollections = (await DynamicDb.getOneData({
+  table: "Collections",
+  column: "*",
+  checkCol: "artist",
+  eqTo: artistData.map((el) => el.id),
+})) as unknown as Collections;
+---
+
+<ArtistLayout artistInfo={artistData[0]} param={username}>
+  {
+    artistCollections &&
+      artistCollections.map((collection) => (
+        <Collection collections={collection} />
+      ))
+  }
+</ArtistLayout>

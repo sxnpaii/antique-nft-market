@@ -3,7 +3,7 @@ export interface LayoutProps {
     description: string;
 }
 
-export interface Nfts {
+export interface Nfts  {
     attributes: string | null
     created_at: string | null
     description: string | null
@@ -34,4 +34,18 @@ export interface Posts {
     path: string | null
     tags: string[] | null
     title: string | null
+}
+
+export interface Artists {
+    avatar: string | null
+    collections: string[] | null
+    created_at: string
+    email: string | null
+    full_name: string | null
+    id: string
+    nfts: string[] | null
+    password: string | null
+    phone_num: string | null
+    posts: string[] | null
+    username: string | null
 }

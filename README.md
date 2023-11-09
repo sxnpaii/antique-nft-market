@@ -88,3 +88,17 @@
 - Added and completed `blog/[...path].astro` _dynamic page_
 - Modified component **Post**
 - Changes in routes `blog`
+
+### Commit №11
+
+- Created pages:
+  - `/artists/`
+  - `/artists/[username]`
+  - `/artists/[username]/collections`
+  - `/artists/[username]/posts`
+- Created layout `ArtistLayout` for artist page
+- Created component `Artist`
+- Created `Artists` table in **Supabase** and many changes in db 
+- Fixed styling bugs
+- Fixed other bugs and typo's
+- alpha preview deployment on `Vercel` with added integration `@astrojs/vercel`

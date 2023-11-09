@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/Layout.astro";
+// sections
+import Hero from "../../sections/ArtistsPage/Hero.astro";
+import Artists from "../../sections/ArtistsPage/Artists.astro";
+export const prerender = true;
+---
+
+<Layout title="Artists || Antique NFT Market">
+  <Hero />
+  <Artists />
+</Layout>

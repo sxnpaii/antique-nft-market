@@ -1,0 +1,14 @@
+---
+const { artistData } = Astro.props;
+import "../../../styles/sections-style/ArtistsPage/ArtistDynamicPage/ArtistInfo.scss";
+---
+
+<section class="ArtistInfo ">
+  <img src={artistData.avatar} alt={artistData.full_name} />
+  <div class="Info">
+    <h3 >{artistData.full_name}</h3>
+    <span>@{artistData.username}</span>
+    <p class="email">{artistData.email}</p>
+    <a href=`tel:${artistData.phone_num}` class="phone_num">{artistData.phone_num}</a>
+  </div>
+</section>

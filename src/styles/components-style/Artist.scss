@@ -1,0 +1,17 @@
+@use "../globals.scss";
+
+.Artist{
+  @apply p-5 bg-[#{globals.$BgWhite}];
+  img{
+    @apply max-w-[230px];
+  }
+  .info {
+    @apply flexbox justify-between mt-3;
+    h6{
+      @apply heading-text text-lg font-bold;
+    }
+    a{
+      @apply basic-text font-light hover:underline
+    }
+  }
+}
