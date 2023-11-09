@@ -101,4 +101,4 @@
 - Created `Artists` table in **Supabase** and many changes in db 
 - Fixed styling bugs
 - Fixed other bugs and typo's
-- alpha preview deployment on `Vercel` with added integration `@astrojs/vercel`
+- alpha preview deployment on `Vercel`
