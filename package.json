@@ -10,12 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.2",
-    "@astrojs/node": "^5.3.5",
     "@astrojs/preact": "^2.2.1",
-    "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.0.1",
     "@supabase/supabase-js": "^2.31.0",
-    "astro": "^2.10.9",
+    "astro": "^4.2.4",
     "dotenv": "^16.3.1",
     "preact": "^10.16.0",
     "sass": "^1.63.6",

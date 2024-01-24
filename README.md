@@ -102,3 +102,8 @@
 - Fixed styling bugs
 - Fixed other bugs and typo's
 - alpha preview deployment on `Vercel`
+
+### Commit №12
+
+- Deployed to `Vercel` with fixed errors
+- Closed Development of project
